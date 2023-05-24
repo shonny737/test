@@ -5,6 +5,7 @@ OTUS [Java Developer. Basic](https://otus.ru/lessons/java-basic/)
 * **Lesson 9** Java синтаксис: классы, интерфейсы, ДЗ
 * **Lesson 12** Java синтаксис: коллекции, основы алгоритмов. ДЗ
 * **Lesson 13** Java синтаксис: equals и hashCode, Map и Set. ДЗ
+* **Lesson 14** Java синтаксис: обработка ошибок - коды возврата, исключения (иерархия), ДЗ
 
 
 
