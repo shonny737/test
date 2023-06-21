@@ -6,8 +6,8 @@ OTUS [Java Developer. Basic](https://otus.ru/lessons/java-basic/)
 * **Lesson 12** Java синтаксис: коллекции, основы алгоритмов. ДЗ
 * **Lesson 13** Java синтаксис: equals и hashCode, Map и Set. ДЗ
 * **Lesson 14** Java синтаксис: обработка ошибок - коды возврата, исключения (иерархия), ДЗ
-
-
+* **Lesson 18** Основы тестирования и TDD, ДЗ
+* **Lesson 20** Реляционные базы данных, SQL, ДЗ
 
 
 ![logo-2022-without-text](https://github.com/shonny737/test/assets/130218309/88417a7b-d152-4251-a2f3-3e8e32f9a839)
