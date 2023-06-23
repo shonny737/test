@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица студентов</title>
+    <style>
+       .frame {
+            width: 700px;
+            height: 650px;
+            outline: 2px solid steelblue;
+            border-radius: 10px;
+        }
+        h3 {
+            color: steelblue;
+            margin-left:10px;
+            text-align: center;
+        }
+        .studentForm {
+            border: 1px solid steelblue;
+            width: 650px;
+            height: 170px;
+            margin-left:20px;
+        }
+        .studentForm label {
+            height: 16px;
+            margin-left:10px;
+        }
+        #nameText {
+            border: 1px solid steelblue;
+            width: 299px;
+            height: 20;
+            margin-left:120px;
+        }
+        #birthDayDate {
+            border: 1px solid steelblue;
+            width: 302px;
+            height: 20px;
+            margin-left:49px;
+        }
+        .studentForm select {
+            border: 1px solid steelblue;
+            width: 305px;
+            height: 20px;
+            margin-left:129px;
+        }
+        .studentForm button {
+            margin:10px;
+        }
+        .students-tab {
+            border: 1px solid steelblue;
+            width: 650px;
+            border-collapse: collapse;
+            margin-left:20px;
+        }
+        .students-tab tr td {
+            border: 1px solid steelblue;
+        }
+        .students-tab-col1 {
+            width: 300px;
+            font-weight: 700;
+        }
+        .students-tab-col2 {
+            width: 120px;
+            font-weight: 700;
+        }
+        .students-tab-col3 {
+            width: 150px;
+            font-weight: 700;
+        }
+        .students-tab-col4 {
+            width: 80px;
+            font-weight: 700;
+        }
+        .averageAge {
+            width: 80px;
+            font-weight: 700;
+        }
+
+
+    </style>
+    <script>
+        "use strict"
+
+        function addStudent() {
+            const studentsTab = document.getElementById("studentsTab");
+            const studentName = document.getElementById("nameText").value;
+            const studentGender = document.getElementById("genderSelect").value;
+            const studentBirthDay = document.getElementById("birthDayDate").value;
+            const studentYear = Math.floor((new Date() - new Date(studentBirthDay)) / 1000 / 60 / 60 / 24 / 365)
+
+            const newRow = studentsTab.insertRow(studentsTab.rows.length - 2);
+            const newCell0 = newRow.insertCell(0);
+            newCell0.appendChild(document.createTextNode(studentName));
+            const newCell1 = newRow.insertCell(1);
+            newCell1.appendChild(document.createTextNode(studentGender));
+            const newCell2 = newRow.insertCell(2);
+            newCell2.appendChild(document.createTextNode(studentBirthDay));
+            const newCell3 = newRow.insertCell(3);
+            newCell3.appendChild(document.createTextNode(studentYear));
+
+            let countRows = studentsTab.rows.length - 3
+            let averageAge = 0
+            for (let i = 1; i < studentsTab.rows.length - 2; i++) {
+              averageAge += Number(studentsTab.rows[i].cells[3].innerText)
+            }
+            studentsTab.rows[studentsTab.rows.length - 1].cells[1].innerHTML = averageAge / countRows
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="frame">
+    <h3>Форма для добавления информации о студенте</h3>
+
+    <form class="studentForm">
+        <p>
+            <label for="nameText"><b>ФИО:</b></label>
+            <input id="nameText" type="text" value=""/>
+        </p>
+        <p>
+            <label for="birthDayDate"><b>Дата рождения:</b></label>
+            <input id="birthDayDate" type="date" value="1991-05-23">
+        </p>
+        <p>
+            <label for="genderSelect"><b>Пол:</b></label>
+            <select id="genderSelect">
+                <option value="Мужчина" selected>Мужчина</option>
+                <option value="Женщина">Женщина</option>
+            </select>
+        </p>
+
+        <button type="button" onclick="addStudent()">Добавить</button>
+    </form>
+
+    <h3>Таблица студентов</h3>
+    <table class="students-tab" id="studentsTab">
+        <thead>
+        <tr>
+            <td class="students-tab-col1">Имя студента</td>
+            <td class="students-tab-col2">Пол</td>
+            <td class="students-tab-col3">Дата рождения</td>
+            <td class="students-tab-col4">Возраст</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Иван Ограномович Штейн</td>
+            <td>Мужчина</td>
+            <td>12.06.1974</td>
+            <td>46</td>
+        </tr>
+        <tr>
+            <td>Гертруда Анатольевна Иванова</td>
+            <td>Женщина</td>
+            <td>01.01.1987</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>Воланд Игоревич Муха</td>
+            <td>Мужчина</td>
+            <td>27.04.1974</td>
+            <td>47</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="averageAge">Средний возраст студентов</td>
+            <td>42</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>
