@@ -1,5 +1,6 @@
 # Домашние задания по курсу "Java Developer. Basic" (Java-разработчик. Базовый курс) в OTUS
 OTUS [Java Developer. Basic](https://otus.ru/lessons/java-basic/)
+* **Lesson 2** Linux. Базовые понятия, основы работы в командной строке, установка VirtualBox, ДЗ 
 * **Lesson 4** Установка Java и необходимых программ, отличия языка программирования от IDE, ДЗ
 * **Lesson 6** Java синтаксис: enum, массивы, условные операторы, циклы, ДЗ
 * **Lesson 9** Java синтаксис: классы, интерфейсы, ДЗ
